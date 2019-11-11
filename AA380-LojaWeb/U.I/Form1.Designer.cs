@@ -192,7 +192,7 @@
             // 
             // produtoBindingSource
             // 
-            this.produtoBindingSource.DataSource = typeof(Projeto_loja.Entidade.Produto);
+            //this.produtoBindingSource.DataSource = typeof(Projeto_loja.Entidade.Produto);
             // 
             // idDataGridViewTextBoxColumn
             // 

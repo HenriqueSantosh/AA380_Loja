@@ -30,14 +30,14 @@
         {
             this.dvgVendas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtValortotal = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtValorRecebido = new System.Windows.Forms.TextBox();
+            this.tbnCancelar = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.txtTroco = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.tbnCancelar = new System.Windows.Forms.Button();
+            this.txtValorRecebido = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtValortotal = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -85,41 +85,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Valor Total";
             // 
-            // label1
+            // tbnCancelar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Valor Total";
+            this.tbnCancelar.Location = new System.Drawing.Point(16, 234);
+            this.tbnCancelar.Name = "tbnCancelar";
+            this.tbnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.tbnCancelar.TabIndex = 7;
+            this.tbnCancelar.Text = "Cancelar";
+            this.tbnCancelar.UseVisualStyleBackColor = true;
             // 
-            // txtValortotal
+            // btnFinalizar
             // 
-            this.txtValortotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValortotal.Location = new System.Drawing.Point(42, 44);
-            this.txtValortotal.Name = "txtValortotal";
-            this.txtValortotal.Size = new System.Drawing.Size(111, 31);
-            this.txtValortotal.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Valor Recebido";
-            // 
-            // txtValorRecebido
-            // 
-            this.txtValorRecebido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorRecebido.Location = new System.Drawing.Point(42, 118);
-            this.txtValorRecebido.Name = "txtValorRecebido";
-            this.txtValorRecebido.Size = new System.Drawing.Size(111, 31);
-            this.txtValorRecebido.TabIndex = 3;
+            this.btnFinalizar.Location = new System.Drawing.Point(115, 234);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
+            this.btnFinalizar.TabIndex = 6;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
             // txtTroco
             // 
@@ -139,23 +121,41 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Troco";
             // 
-            // btnFinalizar
+            // txtValorRecebido
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(115, 234);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(75, 23);
-            this.btnFinalizar.TabIndex = 6;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.txtValorRecebido.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorRecebido.Location = new System.Drawing.Point(42, 118);
+            this.txtValorRecebido.Name = "txtValorRecebido";
+            this.txtValorRecebido.Size = new System.Drawing.Size(111, 31);
+            this.txtValorRecebido.TabIndex = 3;
             // 
-            // tbnCancelar
+            // label2
             // 
-            this.tbnCancelar.Location = new System.Drawing.Point(16, 234);
-            this.tbnCancelar.Name = "tbnCancelar";
-            this.tbnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.tbnCancelar.TabIndex = 7;
-            this.tbnCancelar.Text = "Cancelar";
-            this.tbnCancelar.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Valor Recebido";
+            // 
+            // txtValortotal
+            // 
+            this.txtValortotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValortotal.Location = new System.Drawing.Point(42, 44);
+            this.txtValortotal.Name = "txtValortotal";
+            this.txtValortotal.Size = new System.Drawing.Size(111, 31);
+            this.txtValortotal.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Valor Total";
             // 
             // txtCod
             // 
@@ -305,6 +305,7 @@
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Produtos";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnBuscar
             // 

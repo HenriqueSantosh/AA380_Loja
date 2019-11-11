@@ -7,18 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_loja.Entidade;
-using Projeto_loja.BLL;
+
 
 namespace Projeto_loja.U.I
 {
     public partial class frmEditar : Form
     {
-        private Produto produto;
-        private ProdutoBLL produtoBll;
-        public frmEditar(Produto _produto)
+        ServiceReference1.IService1 service;
+        ServiceReference1.Produto produto;
+        public frmEditar(ServiceReference1.Produto _produto)
         {
-            this.produto = _produto;
+             this.produto = _produto;
 
             InitializeComponent();
         }
@@ -31,50 +30,50 @@ namespace Projeto_loja.U.I
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
-            {
-                MessageBox.Show("Todos os Campos Devem Ser Preenchidos");
-                return;
-            }
+             if (ValidarCampos())
+              {
+                  MessageBox.Show("Todos os Campos Devem Ser Preenchidos");
+                  return;
+              }
 
-            produtoBll = new ProdutoBLL();
-            Produto prod = CreateProduto(produto);
-            bool result = produtoBll.Update(prod);
+            service = new ServiceReference1.Service1Client();
+            ServiceReference1.Produto prod = CreateProduto(produto);
+            bool result = service.UpdateProduto(prod);
             if (!result)
             {
                 MessageBox.Show("Erro ao Alterar");
                 return;
             }
-                  
+
             MessageBox.Show("Produto Alterado com sucesso !!");
         }
 
         #endregion
 
         #region Metodos
-        private void LoadObject(Produto produto)
-        {
-            txtNome.Text = produto.Nome;
-            txtDescricao.Text = produto.Descricao;
-            txtPreco.Text =  Convert.ToString(produto.Preco);
-        }
+          private void LoadObject(ServiceReference1.Produto produto)
+           {
+               txtNome.Text = produto.Nome;
+               txtDescricao.Text = produto.Descricao;
+               txtPreco.Text =  Convert.ToString(produto.Preco);
+           }
 
-        private Produto CreateProduto(Produto produto)
-        {
-            produto.Nome = txtNome.Text.ToString();
-            produto.Descricao = txtDescricao.Text.ToString();
-            produto.Preco = Convert.ToDouble(txtPreco.Text.ToString());
-            return produto;
-        }
-        private bool ValidarCampos()
-        {
-            bool result = string.IsNullOrEmpty(txtDescricao.Text.ToString()) ||
-                           string.IsNullOrEmpty(txtNome.Text.ToString()) ||
-                           string.IsNullOrEmpty(txtPreco.Text.ToString());
-            return result;
-        }
+           private ServiceReference1.Produto CreateProduto(ServiceReference1.Produto produto)
+           {
+               produto.Nome = txtNome.Text.ToString();
+               produto.Descricao = txtDescricao.Text.ToString();
+               produto.Preco = Convert.ToDouble(txtPreco.Text.ToString());
+               return produto;
+           }
+           private bool ValidarCampos()
+           {
+               bool result = string.IsNullOrEmpty(txtDescricao.Text.ToString()) ||
+                              string.IsNullOrEmpty(txtNome.Text.ToString()) ||
+                              string.IsNullOrEmpty(txtPreco.Text.ToString());
+               return result;
+           }
+       
         #endregion
-
-     
     }
 }
+
