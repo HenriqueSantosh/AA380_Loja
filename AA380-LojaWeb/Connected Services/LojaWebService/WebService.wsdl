@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:63521/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:63521/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63521/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Loja_Web_services.Entidade.Entidade" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebService_SaveOrUpdateProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrUpdateProduto" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SaveOrUpdateProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrUpdateProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SaveOrUpdateNota_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrUpdateNota" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SaveOrUpdateNota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrUpdateNotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_DeleteProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduto" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_DeleteProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_DeleteNota_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNota" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_DeleteNota_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetProdutoByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProdutoByID" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetProdutoByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProdutoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetProdutoByNameDESc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProdutoByNameDESc" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetProdutoByNameDESc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProdutoByNameDEScResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetProdutos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProdutos" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetProdutos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProdutosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetNotas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotas" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetNotas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_AddGridProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGridProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_AddGridProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGridProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_RemoveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_RemoveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SumPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:SumPrice" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SumPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SumPriceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWebService">
+    <wsdl:operation name="SaveOrUpdateProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/SaveOrUpdateProduto" message="tns:IWebService_SaveOrUpdateProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/SaveOrUpdateProdutoResponse" message="tns:IWebService_SaveOrUpdateProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrUpdateNota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/SaveOrUpdateNota" message="tns:IWebService_SaveOrUpdateNota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/SaveOrUpdateNotaResponse" message="tns:IWebService_SaveOrUpdateNota_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/DeleteProduto" message="tns:IWebService_DeleteProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/DeleteProdutoResponse" message="tns:IWebService_DeleteProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNota">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/DeleteNota" message="tns:IWebService_DeleteNota_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/DeleteNotaResponse" message="tns:IWebService_DeleteNota_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/GetProdutoByID" message="tns:IWebService_GetProdutoByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/GetProdutoByIDResponse" message="tns:IWebService_GetProdutoByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoByNameDESc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/GetProdutoByNameDESc" message="tns:IWebService_GetProdutoByNameDESc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/GetProdutoByNameDEScResponse" message="tns:IWebService_GetProdutoByNameDESc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/GetProdutos" message="tns:IWebService_GetProdutos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/GetProdutosResponse" message="tns:IWebService_GetProdutos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/GetNotas" message="tns:IWebService_GetNotas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/GetNotasResponse" message="tns:IWebService_GetNotas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGridProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/AddGridProduct" message="tns:IWebService_AddGridProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/AddGridProductResponse" message="tns:IWebService_AddGridProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/RemoveProduct" message="tns:IWebService_RemoveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/RemoveProductResponse" message="tns:IWebService_RemoveProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SumPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebService/SumPrice" message="tns:IWebService_SumPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebService/SumPriceResponse" message="tns:IWebService_SumPrice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWebService" type="tns:IWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveOrUpdateProduto">
+      <soap:operation soapAction="http://tempuri.org/IWebService/SaveOrUpdateProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrUpdateNota">
+      <soap:operation soapAction="http://tempuri.org/IWebService/SaveOrUpdateNota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <soap:operation soapAction="http://tempuri.org/IWebService/DeleteProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNota">
+      <soap:operation soapAction="http://tempuri.org/IWebService/DeleteNota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoByID">
+      <soap:operation soapAction="http://tempuri.org/IWebService/GetProdutoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutoByNameDESc">
+      <soap:operation soapAction="http://tempuri.org/IWebService/GetProdutoByNameDESc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProdutos">
+      <soap:operation soapAction="http://tempuri.org/IWebService/GetProdutos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotas">
+      <soap:operation soapAction="http://tempuri.org/IWebService/GetNotas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGridProduct">
+      <soap:operation soapAction="http://tempuri.org/IWebService/AddGridProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <soap:operation soapAction="http://tempuri.org/IWebService/RemoveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SumPrice">
+      <soap:operation soapAction="http://tempuri.org/IWebService/SumPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="BasicHttpBinding_IWebService" binding="tns:BasicHttpBinding_IWebService">
+      <soap:address location="http://localhost:63521/WebService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

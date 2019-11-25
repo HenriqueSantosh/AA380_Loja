@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Loja-Web-services.Entidade">
-      <HintPath>Repository\Loja-Web-services.Entidade.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.1.1.0\lib\net451\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
@@ -151,7 +148,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+    <Compile Include="Connected Services\LojaWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -204,23 +201,25 @@
     <EmbeddedResource Include="U.I\mdiCadastroProduto.resx">
       <DependentUpon>mdiCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\Projeto_loja.ServiceReference1.NotaFiscal.datasource">
+    <None Include="Connected Services\LojaWebService\Projeto_loja.LojaWebService.NotaFiscal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Projeto_loja.ServiceReference1.Produto.datasource">
+    <None Include="Connected Services\LojaWebService\Projeto_loja.LojaWebService.Produto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
-    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+    <None Include="Connected Services\LojaWebService\WebService.wsdl" />
+    <None Include="Connected Services\LojaWebService\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service11.xsd">
+    <None Include="Connected Services\LojaWebService\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service12.xsd">
+    <None Include="Connected Services\LojaWebService\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Loja_Web_services.Entidade.Entidade.NotaFiscal.datasource" />
+    <None Include="Properties\DataSources\Loja_Web_services.Entidade.Entidade.Produto.datasource" />
     <None Include="Properties\DataSources\Projeto_loja.Entidade.Produto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -239,10 +238,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Service1.disco" />
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+    <None Include="Connected Services\LojaWebService\WebService.disco" />
+    <None Include="Connected Services\LojaWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\LojaWebService\configuration.svcinfo" />
+    <None Include="Connected Services\LojaWebService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -250,7 +249,7 @@
     <Content Include="Resouces\update.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\LojaWebService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
